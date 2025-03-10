@@ -7,6 +7,7 @@ function HomePage() {
   return (
     <Container>
       <h1>Welcome to the Playlist App</h1>
+      <p>Is you can see this message, React is Working</p>
     </Container>
   );
 }
