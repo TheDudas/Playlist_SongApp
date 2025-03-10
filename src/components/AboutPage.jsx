@@ -5,7 +5,7 @@ function AboutPage() {
   return (
     <Container>
       <h1>About This App</h1>
-      <p>This app allows you to manage your music playlist. Add, update, and delete songs easily!</p>
+      <p>This app allows you to manage your music playlist and Add, Update, or Delete songs easily!</p>
     </Container>
   );
 }

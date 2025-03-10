@@ -11,11 +11,12 @@ function SongCard({ song, deleteSong, updateSong }) {
   const toggleEdit = () => {
     setIsEditing(!isEditing);
   };
+// creates card to display song, delete option and update or Edit song data 
 
   return (
     <Card style={{ width: '18rem' }}>
       {isEditing ? (
-        <EditSongForm song={song} updateSong={updateSong} toggleEdit={toggleEdit} />
+        <EditSongForm song={song} updateSong={updateSong} toggleEdit={toggleEdit} />  // will toggle the buttons based on Edit or upate, or Deletion
       ) : (
         <Card.Body>
           <Card.Title>{song.title}</Card.Title>

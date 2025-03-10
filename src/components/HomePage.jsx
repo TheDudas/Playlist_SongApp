@@ -12,3 +12,5 @@ function HomePage() {
 }
 
 export default HomePage;
+
+// exports the HomePage for use on other imports. 

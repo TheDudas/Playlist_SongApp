@@ -10,6 +10,7 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com/posts';
 
 function SongsPage() {
   const [songs, setSongs] = useState([]);
+// add Songs to useState
 
   useEffect(() => {
     fetchSongs();
@@ -19,8 +20,9 @@ function SongsPage() {
     const response = await fetch(BASE_URL);
     let data = await response.json();
     data = data.filter(song => song.title && song.body && song.album && song.band);
-    setSongs(data.slice(0, 10)); // limiting to 10 songs for simplicity
+    setSongs(data.slice(0, 10)); // limiting to 10 songs for simplicity, can also remove or not have default song listed. 
   };
+// adding songs while waiting for a response. 
 
   const addSong = async (song) => {
     const response = await fetch(BASE_URL, {
@@ -33,6 +35,8 @@ function SongsPage() {
     const newSong = await response.json();
     setSongs([...songs, newSong]);
   };
+// updating a song is different than adding a song
+// Updating and editing is the same. 
 
   const updateSong = async (id, updatedSong) => {
     const response = await fetch(`${BASE_URL}/${id}`, {
@@ -46,12 +50,17 @@ function SongsPage() {
     setSongs(songs.map(song => (song.id === id ? updatedData : song)));
   };
 
+  // deleting a song and it's ID will delete only the song. 
+
   const deleteSong = async (id) => {
     await fetch(`${BASE_URL}/${id}`, {
       method: 'DELETE',
     });
     setSongs(songs.filter(song => song.id !== id));
   };
+
+  // return the songs added to the array in the container by row.  
+  // Create a card form to show the song data. 
 
   return (
     <Container>

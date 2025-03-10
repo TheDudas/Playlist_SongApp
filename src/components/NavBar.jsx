@@ -17,3 +17,4 @@ function NavBar() {
 }
 
 export default NavBar;
+// Navbar settings and links to Song Pages and About page

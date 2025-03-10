@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-// Im port useState, buttons and run functions. 
+// Import useState, buttons and run functions. 
 
 function AddSongForm({ addSong }) {
   const [song, setSong] = useState({ title: '', body: '', album: '', band: '' });
+// add songs and details of comments, Body, Album and Band.    Body and Comments are the same.
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,6 +16,9 @@ function AddSongForm({ addSong }) {
     addSong(song);
     setSong({ title: '', body: '', album: '', band: '' });
   };
+// how to handle when the data is submitted. 
+
+//what to return on submit
 
   return (
     <Form onSubmit={handleSubmit}>
